@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const knex = require('../knex');
+const db = require("../db_connection");
 
 router.get('/', async (req, res, next) => {
-  let results;
 
   try {
-    results = await knex("commande");
+    const [results, metadata] = await db.query("SELECT * FROM commande");
+    //console.log(metadata);
     res.json(results);
   } catch (error) {
     res.json(error);
