@@ -8,6 +8,7 @@
     "watch": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "0.25.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "knex": "1.0.1",
